@@ -16,10 +16,10 @@ const Createblog = () => {
 
     const handleUpload = async (event) => {
         let uploadedFile = await uploadFile(event.target.files[0]);
-        if(uploadedFile.path){
-            setNewblog({...newblog,image:uploadedFile.path});
+        if(uploadedFile.path){  
+            setNewblog({...newblog, image: uploadedFile.path}); // Cloudinary returns a public URL
         }
-    }
+    };
 
     const handleSubmit = async () => {
         let createdBlog = await createBlog(newblog);
